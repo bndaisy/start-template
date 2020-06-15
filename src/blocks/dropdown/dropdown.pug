@@ -1,0 +1,5 @@
+mixin dropdown(array, className)    
+    ul.dropdown(class = className + '__dropdown')
+        - for(let i in array)
+            li.dropdown__item
+                a.dropdown__link(href='/' + array[i].url)= array[i].title

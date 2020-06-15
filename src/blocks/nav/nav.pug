@@ -1,0 +1,13 @@
+include ../dropdown/dropdown
+
+mixin nav(array, className)
+	nav.nav(class = className + '__nav')
+		ul.nav__list
+			- for(let i in array)
+				if (array[i].dropdown)
+					li.nav__item
+						a.nav__link(href='/' + array[i].url)= array[i].title
+						+dropdown(array[i].dropdown, 'nav')
+				else
+					li.nav__item
+						a.nav__link(href='/' + array[i].url)= array[i].title
